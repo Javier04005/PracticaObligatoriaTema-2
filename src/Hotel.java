@@ -1,7 +1,4 @@
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.util.Locale;
 import java.time.temporal.ChronoUnit;
 import java.util.Scanner;
 
@@ -46,7 +43,7 @@ public class Hotel {
         String nombreUsuario;
         String password;
         //Acceso para las credenciales del admin
-        boolean accesoConcedido = false;
+        boolean accesoConcedido;
         //Lógica
         do {
             //Menú de bienvenida
@@ -272,7 +269,7 @@ public class Hotel {
                                 System.out.println();
                                 break;
                             case 2:
-                                int numFacturar = -1;
+                                int numFacturar;
                                 System.out.print("Introduce el número de habitación a liberar (1-10): ");
                                 try {
                                     numFacturar = Integer.parseInt(s.nextLine());
@@ -464,9 +461,8 @@ public class Hotel {
                                     System.out.println("Billetes de 5€:  " + billetes5);
                                     System.out.println("Monedas de 2€:   " + monedas2);
                                     System.out.println("Monedas de 1€:   " + monedas1);
-                                    valorTotalCambio = (billetes50 * 50) + (billetes20 * 20) +
-                                            (billetes10 * 10) + (billetes5 * 5) +
-                                            (monedas2 * 2) + (monedas1 * 1);
+                                    valorTotalCambio = (billetes50 * 50) + (billetes20 * 20) + (billetes10 * 10) +
+                                            (billetes5 * 5) + (monedas2 * 2) + (monedas1);
                                     System.out.println("La caja de cambio ha acumulado: " + valorTotalCambio + "€");
                                     break;
                                 case "iii": //Apagar el software
