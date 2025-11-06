@@ -6,17 +6,35 @@ public class Hotel {
     public static void main(String[] args) {
         //Iniciar variables
         Scanner s = new Scanner(System.in);
-        //Precio de las habitaciones por noche
+
+        //Precios de las habitaciones por noche
         final int tarifaDoble = 60;
         final int tarifaIndividual = 45;
+
+        //VARIABLES DE CLIENTE, UNA POR HABITACIÓN ---
+        // Se usan variables específicas para que los datos no se sobrescriban.
+        String nombreCliente1 = ""; int telefono1 = 0;
+        String nombreCliente2 = ""; int telefono2 = 0;
+        String nombreCliente3 = ""; int telefono3 = 0;
+        String nombreCliente4 = ""; int telefono4 = 0;
+        String nombreCliente5 = ""; int telefono5 = 0;
+        String nombreCliente6 = ""; int telefono6 = 0;
+        String nombreCliente7 = ""; int telefono7 = 0;
+        String nombreCliente8 = ""; int telefono8 = 0;
+        String nombreCliente9 = ""; int telefono9 = 0;
+        String nombreCliente10 = ""; int telefono10 = 0;
+
         //Variables de los menus
         String op, op2;
         int op4;
-        //Variables de ingresos totales ---
-        long ingresosTotales = 0;
+
+        //Variables de ingresos totales
+        double ingresosTotales = 0.0;
         int reservasFinalizadas = 0;
+
         //Inventario para el cambio
         int billetes50 = 2, billetes20 = 5, billetes10 = 10, billetes5 = 20, monedas2 = 50, monedas1 = 100;
+
         //Estado de cada habitacion predefinida
         String estadoHabitacion1 = "Libre";
         String estadoHabitacion2 = "Libre";
@@ -28,22 +46,25 @@ public class Hotel {
         String estadoHabitacion8 = "Libre";
         String estadoHabitacion9 = "Libre";
         String estadoHabitacion10 = "Libre";
+
         //Variables fecha de entrada
-        LocalDate entradaHabitacion1 = LocalDate.now();
-        LocalDate entradaHabitacion2 = LocalDate.now();
-        LocalDate entradaHabitacion3 = LocalDate.now();
-        LocalDate entradaHabitacion4 = LocalDate.now();
-        LocalDate entradaHabitacion5 = LocalDate.now();
-        LocalDate entradaHabitacion6 = LocalDate.now();
-        LocalDate entradaHabitacion7 = LocalDate.now();
-        LocalDate entradaHabitacion8 = LocalDate.now();
-        LocalDate entradaHabitacion9 = LocalDate.now();
-        LocalDate entradaHabitacion10 = LocalDate.now();
+        LocalDate entradaHabitacion1 = null;
+        LocalDate entradaHabitacion2 = null;
+        LocalDate entradaHabitacion3 = null;
+        LocalDate entradaHabitacion4 = null;
+        LocalDate entradaHabitacion5 = null;
+        LocalDate entradaHabitacion6 = null;
+        LocalDate entradaHabitacion7 = null;
+        LocalDate entradaHabitacion8 = null;
+        LocalDate entradaHabitacion9 = null;
+        LocalDate entradaHabitacion10 = null;
+
         //Variables del administrador
         String nombreUsuario;
         String password;
         //Acceso para las credenciales del admin
         boolean accesoConcedido;
+
         //Lógica
         do {
             //Menú de bienvenida
@@ -79,8 +100,8 @@ public class Hotel {
                     do {
                         System.out.println("""
                                 =============================================================
-                                Hay 10 habitaciones de las cuales 2 son Libres y 8 son Individuales
-                                Que tipo de habitación deseas consultar:
+                                Hay 10 habitaciones (2 Individuales, 8 Dobles)
+                                Qué tipo de habitación deseas consultar:
                                 1-Individuales
                                 2-Dobles
                                 3-Salir""");
@@ -88,19 +109,19 @@ public class Hotel {
                         switch (consultarTipoHabitacion) {
                             case "1": //HABITACIONES INDIVIDUALES
                                 System.out.println("La tarifa es de " + tarifaIndividual + "€");
-                                System.out.println("La habitación 1 " + "está " + estadoHabitacion1);
-                                System.out.println("La habitación 2 " + "está " + estadoHabitacion2);
+                                System.out.println("La habitación 1 " + "está " + estadoHabitacion1 + (estadoHabitacion1.equals("Ocupada") ? " (Entrada: " + entradaHabitacion1 + ")" : ""));
+                                System.out.println("La habitación 2 " + "está " + estadoHabitacion2 + (estadoHabitacion2.equals("Ocupada") ? " (Entrada: " + entradaHabitacion2 + ")" : ""));
                                 break;
                             case "2": //HABITACIONES DOBLES
                                 System.out.println("La tarifa es de " + tarifaDoble + "€");
-                                System.out.println("La habitación 3 " + "está " + estadoHabitacion3);
-                                System.out.println("La habitación 4 " + "está " + estadoHabitacion4);
-                                System.out.println("La habitación 5 " + "está " + estadoHabitacion5);
-                                System.out.println("La habitación 6 " + "está " + estadoHabitacion6);
-                                System.out.println("La habitación 7 " + "está " + estadoHabitacion7);
-                                System.out.println("La habitación 8 " + "está " + estadoHabitacion8);
-                                System.out.println("La habitación 9 " + "está " + estadoHabitacion9);
-                                System.out.println("La habitación 10 " + "está " + estadoHabitacion10);
+                                System.out.println("La habitación 3 " + "está " + estadoHabitacion3 + (estadoHabitacion3.equals("Ocupada") ? " (Entrada: " + entradaHabitacion3 + ")" : ""));
+                                System.out.println("La habitación 4 " + "está " + estadoHabitacion4 + (estadoHabitacion4.equals("Ocupada") ? " (Entrada: " + entradaHabitacion4 + ")" : ""));
+                                System.out.println("La habitación 5 " + "está " + estadoHabitacion5 + (estadoHabitacion5.equals("Ocupada") ? " (Entrada: " + entradaHabitacion5 + ")" : ""));
+                                System.out.println("La habitación 6 " + "está " + estadoHabitacion6 + (estadoHabitacion6.equals("Ocupada") ? " (Entrada: " + entradaHabitacion6 + ")" : ""));
+                                System.out.println("La habitación 7 " + "está " + estadoHabitacion7 + (estadoHabitacion7.equals("Ocupada") ? " (Entrada: " + entradaHabitacion7 + ")" : ""));
+                                System.out.println("La habitación 8 " + "está " + estadoHabitacion8 + (estadoHabitacion8.equals("Ocupada") ? " (Entrada: " + entradaHabitacion8 + ")" : ""));
+                                System.out.println("La habitación 9 " + "está " + estadoHabitacion9 + (estadoHabitacion9.equals("Ocupada") ? " (Entrada: " + entradaHabitacion9 + ")" : ""));
+                                System.out.println("La habitación 10 " + "está " + estadoHabitacion10 + (estadoHabitacion10.equals("Ocupada") ? " (Entrada: " + entradaHabitacion10 + ")" : ""));
                                 break;
                             case "3": //Salir al menú principal
                                 break;
@@ -160,73 +181,102 @@ public class Hotel {
                                             9.-Habitación 9
                                             10.-Habitación 10
                                             11.-Salir
-                                            Elige una habitación(1-10):""");
+                                            Elige una habitación: (1-10):""");
                                     numHabitacion = s.nextLine();
-                                    switch (numHabitacion) {
-                                        case "1": //Habitación 1
-                                            if (estadoHabitacion1.equals("Libre")) {
-                                                estadoHabitacion1 = "Ocupada";
-                                                System.out.println("Listo. Has reservado la habitación");
-                                            } else System.out.println("La habitación está ocupada");
-                                            break;
-                                        case "2": //Habitación 2
-                                            if (estadoHabitacion2.equals("Libre")) {
-                                                estadoHabitacion2 = "Ocupada";
-                                                System.out.println("Listo. Has reservado la habitación");
-                                            } else System.out.println("La habitación está ocupada");
-                                            break;
-                                        case "3": //Habitación 3
-                                            if (estadoHabitacion3.equals("Libre")) {
-                                                estadoHabitacion3 = "Ocupada";
-                                                System.out.println("Listo. Has reservado la habitación");
-                                            } else System.out.println("La habitación está ocupada");
-                                            break;
-                                        case "4": //Habitación 4
-                                            if (estadoHabitacion4.equals("Libre")) {
-                                                estadoHabitacion4 = "Ocupada";
-                                                System.out.println("Listo. Has reservado la habitación");
-                                            } else System.out.println("La habitación está ocupada");
-                                            break;
-                                        case "5": //Habitación 5
-                                            if (estadoHabitacion5.equals("Libre")) {
-                                                estadoHabitacion5 = "Ocupada";
-                                                System.out.println("Listo. Has reservado la habitación");
-                                            } else System.out.println("La habitación está ocupada");
-                                            break;
-                                        case "6": //Habitación 6
-                                            if (estadoHabitacion6.equals("Libre")) {
-                                                estadoHabitacion6 = "Ocupada";
-                                                System.out.println("Listo. Has reservado la habitación");
-                                            } else System.out.println("La habitación está ocupada");
-                                            break;
-                                        case "7": //Habitación 7
-                                            if (estadoHabitacion7.equals("Libre")) {
-                                                estadoHabitacion7 = "Ocupada";
-                                                System.out.println("Listo. Has reservado la habitación");
-                                            } else System.out.println("La habitación está ocupada");
-                                            break;
-                                        case "8": //Habitación 8
-                                            if (estadoHabitacion8.equals("Libre")) {
-                                                estadoHabitacion8 = "Ocupada";
-                                                System.out.println("Listo. Has reservado la habitación");
-                                            } else System.out.println("La habitación está ocupada");
-                                            break;
-                                        case "9": //Habitación 9
-                                            if (estadoHabitacion9.equals("Libre")) {
-                                                estadoHabitacion9 = "Ocupada";
-                                                System.out.println("Listo. Has reservado la habitación");
-                                            } else System.out.println("La habitación está ocupada");
-                                            break;
-                                        case "10": //Habitación 10
-                                            if (estadoHabitacion10.equals("Libre")) {
-                                                estadoHabitacion10 = "Ocupada";
-                                                System.out.println("Listo. Has reservado la habitación");
-                                            } else System.out.println("La habitación está ocupada");
-                                            break;
-                                        case "11":
-                                            break;
-                                        default:
-                                            System.out.println("No hay más habitaciones");
+
+                                    int numHab = -1;
+                                    try {
+                                        numHab = Integer.parseInt(numHabitacion);
+                                    } catch (NumberFormatException e) {
+                                        if (!numHabitacion.equals("11")) {
+                                            System.out.println("Entrada no válida. Introduce un número de habitación o 11 para salir.");
+                                        }
+                                        continue;
+                                    }
+
+                                    if (numHab >= 1 && numHab <= 10) {
+                                        String estadoActual = null;
+
+                                        // Determinar el estado
+                                        switch (numHab) {
+                                            case 1: estadoActual = estadoHabitacion1; break;
+                                            case 2: estadoActual = estadoHabitacion2; break;
+                                            case 3: estadoActual = estadoHabitacion3; break;
+                                            case 4: estadoActual = estadoHabitacion4; break;
+                                            case 5: estadoActual = estadoHabitacion5; break;
+                                            case 6: estadoActual = estadoHabitacion6; break;
+                                            case 7: estadoActual = estadoHabitacion7; break;
+                                            case 8: estadoActual = estadoHabitacion8; break;
+                                            case 9: estadoActual = estadoHabitacion9; break;
+                                            case 10: estadoActual = estadoHabitacion10; break;
+                                        }
+
+                                        if (estadoActual.equals("Libre")) {
+                                            //Variables temporales del Cliente
+                                            String tempNombre;
+                                            int tempTelefono = 0;
+
+                                            System.out.print("¿Cómo te llamas?: ");
+                                            tempNombre = s.nextLine();
+                                            System.out.print("¿Cuál es tu número de teléfono?: ");
+                                            try {
+                                                tempTelefono = Integer.parseInt(s.nextLine());
+                                            } catch (NumberFormatException e) {
+                                                System.out.println("Número de teléfono no válido. La reserva no se completará.");
+                                                continue;
+                                            }
+
+                                            // Asignar fecha de entrada (hoy)
+                                            LocalDate fechaEntrada = LocalDate.now();
+
+                                            // Actualizar estado, fecha Y DATOS DEL CLIENTE
+                                            switch (numHab) {
+                                                case 1:
+                                                    estadoHabitacion1 = "Ocupada"; entradaHabitacion1 = fechaEntrada;
+                                                    nombreCliente1 = tempNombre; telefono1 = tempTelefono;
+                                                    break;
+                                                case 2:
+                                                    estadoHabitacion2 = "Ocupada"; entradaHabitacion2 = fechaEntrada;
+                                                    nombreCliente2 = tempNombre; telefono2 = tempTelefono;
+                                                    break;
+                                                case 3:
+                                                    estadoHabitacion3 = "Ocupada"; entradaHabitacion3 = fechaEntrada;
+                                                    nombreCliente3 = tempNombre; telefono3 = tempTelefono;
+                                                    break;
+                                                case 4:
+                                                    estadoHabitacion4 = "Ocupada"; entradaHabitacion4 = fechaEntrada;
+                                                    nombreCliente4 = tempNombre; telefono4 = tempTelefono;
+                                                    break;
+                                                case 5:
+                                                    estadoHabitacion5 = "Ocupada"; entradaHabitacion5 = fechaEntrada;
+                                                    nombreCliente5 = tempNombre; telefono5 = tempTelefono;
+                                                    break;
+                                                case 6:
+                                                    estadoHabitacion6 = "Ocupada"; entradaHabitacion6 = fechaEntrada;
+                                                    nombreCliente6 = tempNombre; telefono6 = tempTelefono;
+                                                    break;
+                                                case 7:
+                                                    estadoHabitacion7 = "Ocupada"; entradaHabitacion7 = fechaEntrada;
+                                                    nombreCliente7 = tempNombre; telefono7 = tempTelefono;
+                                                    break;
+                                                case 8:
+                                                    estadoHabitacion8 = "Ocupada"; entradaHabitacion8 = fechaEntrada;
+                                                    nombreCliente8 = tempNombre; telefono8 = tempTelefono;
+                                                    break;
+                                                case 9:
+                                                    estadoHabitacion9 = "Ocupada"; entradaHabitacion9 = fechaEntrada;
+                                                    nombreCliente9 = tempNombre; telefono9 = tempTelefono;
+                                                    break;
+                                                case 10:
+                                                    estadoHabitacion10 = "Ocupada"; entradaHabitacion10 = fechaEntrada;
+                                                    nombreCliente10 = tempNombre; telefono10 = tempTelefono;
+                                                    break;
+                                            }
+
+                                            System.out.println("Listo. Has reservado la habitación " + numHab + ". Fecha de entrada: " + fechaEntrada);
+                                        } else {
+                                            System.out.println("La habitación está ocupada");
+                                        }
                                     }
                                 } while (!numHabitacion.equals("11"));
                                 break;
@@ -252,7 +302,14 @@ public class Hotel {
                                 2.-Facturar habitación
                                 3.-Salir
                                 Elige una opción:""");
-                        op4 = Integer.parseInt(s.nextLine());
+                        try {
+                            op4 = Integer.parseInt(s.nextLine());
+                        } catch (NumberFormatException e) {
+                            System.out.println("Entrada no válida. Introduce 1, 2 o 3.");
+                            op4 = 0;
+                            continue;
+                        }
+
                         switch (op4) {
                             case 1:
                                 System.out.println("--- Habitaciones Ocupadas ---");
@@ -270,7 +327,7 @@ public class Hotel {
                                 break;
                             case 2:
                                 int numFacturar;
-                                System.out.print("Introduce el número de habitación a liberar (1-10): ");
+                                System.out.print("Introduce el número de habitación a facturar (1-10): ");
                                 try {
                                     numFacturar = Integer.parseInt(s.nextLine());
                                 } catch (NumberFormatException e) {
@@ -279,52 +336,25 @@ public class Hotel {
                                 }
 
                                 if (numFacturar >= 1 && numFacturar <= 10) {
-                                    // Determinar la variable de fecha y la tarifa a usar
+                                    // Determinar la variable de fecha, la tarifa y el cliente a usar
                                     LocalDate entrada = null;
                                     int tarifa = 0;
                                     String tipoHabitacion = "";
+                                    String nombreFactura = "";
+                                    int telefonoFactura = 0;
 
                                     // Lógica para obtener los datos
-                                    if (numFacturar == 1) {
-                                        entrada = entradaHabitacion1;
-                                        tarifa = tarifaIndividual;
-                                        tipoHabitacion = "Individual";
-                                    } else if (numFacturar == 2) {
-                                        entrada = entradaHabitacion2;
-                                        tarifa = tarifaIndividual;
-                                        tipoHabitacion = "Individual";
-                                    } else if (numFacturar == 3) {
-                                        entrada = entradaHabitacion3;
-                                        tarifa = tarifaDoble;
-                                        tipoHabitacion = "Doble";
-                                    } else if (numFacturar == 4) {
-                                        entrada = entradaHabitacion4;
-                                        tarifa = tarifaDoble;
-                                        tipoHabitacion = "Doble";
-                                    } else if (numFacturar == 5) {
-                                        entrada = entradaHabitacion5;
-                                        tarifa = tarifaDoble;
-                                        tipoHabitacion = "Doble";
-                                    } else if (numFacturar == 6) {
-                                        entrada = entradaHabitacion6;
-                                        tarifa = tarifaDoble;
-                                        tipoHabitacion = "Doble";
-                                    } else if (numFacturar == 7) {
-                                        entrada = entradaHabitacion7;
-                                        tarifa = tarifaDoble;
-                                        tipoHabitacion = "Doble";
-                                    } else if (numFacturar == 8) {
-                                        entrada = entradaHabitacion8;
-                                        tarifa = tarifaDoble;
-                                        tipoHabitacion = "Doble";
-                                    } else if (numFacturar == 9) {
-                                        entrada = entradaHabitacion9;
-                                        tarifa = tarifaDoble;
-                                        tipoHabitacion = "Doble";
-                                    } else if (numFacturar == 10) {
-                                        entrada = entradaHabitacion10;
-                                        tarifa = tarifaDoble;
-                                        tipoHabitacion = "Doble";
+                                    switch (numFacturar) {
+                                        case 1: entrada = entradaHabitacion1; tarifa = tarifaIndividual; tipoHabitacion = "Individual"; nombreFactura = nombreCliente1; telefonoFactura = telefono1; break;
+                                        case 2: entrada = entradaHabitacion2; tarifa = tarifaIndividual; tipoHabitacion = "Individual"; nombreFactura = nombreCliente2; telefonoFactura = telefono2; break;
+                                        case 3: entrada = entradaHabitacion3; tarifa = tarifaDoble; tipoHabitacion = "Doble"; nombreFactura = nombreCliente3; telefonoFactura = telefono3; break;
+                                        case 4: entrada = entradaHabitacion4; tarifa = tarifaDoble; tipoHabitacion = "Doble"; nombreFactura = nombreCliente4; telefonoFactura = telefono4; break;
+                                        case 5: entrada = entradaHabitacion5; tarifa = tarifaDoble; tipoHabitacion = "Doble"; nombreFactura = nombreCliente5; telefonoFactura = telefono5; break;
+                                        case 6: entrada = entradaHabitacion6; tarifa = tarifaDoble; tipoHabitacion = "Doble"; nombreFactura = nombreCliente6; telefonoFactura = telefono6; break;
+                                        case 7: entrada = entradaHabitacion7; tarifa = tarifaDoble; tipoHabitacion = "Doble"; nombreFactura = nombreCliente7; telefonoFactura = telefono7; break;
+                                        case 8: entrada = entradaHabitacion8; tarifa = tarifaDoble; tipoHabitacion = "Doble"; nombreFactura = nombreCliente8; telefonoFactura = telefono8; break;
+                                        case 9: entrada = entradaHabitacion9; tarifa = tarifaDoble; tipoHabitacion = "Doble"; nombreFactura = nombreCliente9; telefonoFactura = telefono9; break;
+                                        case 10: entrada = entradaHabitacion10; tarifa = tarifaDoble; tipoHabitacion = "Doble"; nombreFactura = nombreCliente10; telefonoFactura = telefono10; break;
                                     }
 
                                     // Verificar si la habitación está ocupada y tiene fecha de entrada
@@ -354,57 +384,178 @@ public class Hotel {
                                         }
                                     }
 
-                                    // Calcular el cobro de la habitación y generar la factura
-                                    long cobro = diasEstancia * tarifa;
-                                    ingresosTotales += cobro;
-                                    reservasFinalizadas++;
+                                    //Calculamos el cobro de la habitación y generamos la factura
+                                    double subtotal = (double) diasEstancia * tarifa; // Monto o Subtotal (sin IVA)
+                                    double ivaRate = 0.21;
+                                    double iva = subtotal * ivaRate;
+                                    double totalSinRedondear = subtotal + iva;
 
-                                    System.out.println("\n================ FACTURA ================");
+                                    // Redondeamos el total al euro más cercano para trabajar con el inventario de cambio
+                                    int totalAPagar = (int) Math.round(totalSinRedondear);
+
+                                    // Presentación de la factura
+                                    System.out.println("\n====================== FACTURA ======================");
+                                    System.out.println("Cliente: " + nombreFactura);
+                                    System.out.println("Teléfono: " + telefonoFactura);
                                     System.out.println("Habitación: " + numFacturar + " (" + tipoHabitacion + ")");
                                     System.out.println("Tarifa por noche: " + tarifa + "€");
                                     System.out.println("Fecha de entrada: " + entrada);
                                     System.out.println("Fecha de salida:  " + salida);
                                     System.out.println("Días de estancia: " + diasEstancia);
-                                    System.out.println("-----------------------------------------");
-                                    System.out.println("COBRO TOTAL: " + cobro + "€");
-                                    System.out.println("=========================================\n");
+                                    System.out.println("-----------------------------------------------------");
+                                    System.out.printf("Subtotal (Monto o Total sin IVA): %.2f€\n", subtotal);
+                                    System.out.printf("IVA (21%%):                        %.2f€\n", iva);
+                                    System.out.println("-----------------------------------------------------");
+                                    System.out.printf("TOTAL (Redondeado a entero):      %d€\n", totalAPagar);
+                                    System.out.println("=====================================================\n");
 
-                                    // Liberar habitación para que esté libre de nuevo
-                                    if (numFacturar == 1) {
-                                        estadoHabitacion1 = "Libre";
-                                        entradaHabitacion1 = null;
-                                    } else if (numFacturar == 2) {
-                                        estadoHabitacion2 = "Libre";
-                                        entradaHabitacion2 = null;
-                                    } else if (numFacturar == 3) {
-                                        estadoHabitacion3 = "Libre";
-                                        entradaHabitacion3 = null;
-                                    } else if (numFacturar == 4) {
-                                        estadoHabitacion4 = "Libre";
-                                        entradaHabitacion4 = null;
-                                    } else if (numFacturar == 5) {
-                                        estadoHabitacion5 = "Libre";
-                                        entradaHabitacion5 = null;
-                                    } else if (numFacturar == 6) {
-                                        estadoHabitacion6 = "Libre";
-                                        entradaHabitacion6 = null;
-                                    } else if (numFacturar == 7) {
-                                        estadoHabitacion7 = "Libre";
-                                        entradaHabitacion7 = null;
-                                    } else if (numFacturar == 8) {
-                                        estadoHabitacion8 = "Libre";
-                                        entradaHabitacion8 = null;
-                                    } else if (numFacturar == 9) {
-                                        estadoHabitacion9 = "Libre";
-                                        entradaHabitacion9 = null;
-                                    } else if (numFacturar == 10) {
-                                        estadoHabitacion10 = "Libre";
-                                        entradaHabitacion10 = null;
+                                    //Lógica de Pago y Cambio
+                                    double dineroEntregado = 0.0;
+                                    int cambioRequerido = 0;
+                                    boolean pagado = false;
+
+                                    while (!pagado) {
+                                        try {
+                                            System.out.printf("Pendiente de pago: %d€ (solo contado).\n", totalAPagar);
+                                            System.out.print("Introduce la cantidad pagada: ");
+                                            // Se usa replace para aceptar tanto ',' como '.' como separador decimal
+                                            dineroEntregado = Double.parseDouble(s.nextLine().replace(',', '.'));
+                                        } catch (NumberFormatException e) {
+                                            System.out.println("Entrada no válida. Introduce una cantidad numérica.");
+                                            continue;
+                                        }
+
+                                        if (dineroEntregado < totalAPagar) {
+                                            System.out.printf("Error: La cantidad entregada (%.2f€) es insuficiente. El total es %d€.\n", dineroEntregado, totalAPagar);
+                                            continue;
+                                        }
+
+                                        // Redondeamos el dinero entregado a entero para calcular el cambio
+                                        cambioRequerido = (int) Math.round(dineroEntregado) - totalAPagar;
+
+                                        if (cambioRequerido == 0) {
+                                            System.out.println("Pago exacto recibido. No hay cambio.");
+                                            pagado = true;
+                                        } else {
+                                            //Cambio de monedas
+                                            int dar50 = 0;
+                                            int dar20 = 0;
+                                            int dar10 = 0;
+                                            int dar5 = 0;
+                                            int dar2 = 0;
+                                            int dar1 = 0;
+
+                                            int cambioRestante = cambioRequerido;
+
+                                            // 50 EUROS
+                                            if (cambioRestante >= 50) {
+                                                int cantidadNecesaria = cambioRestante / 50;
+                                                dar50 = Math.min(cantidadNecesaria, billetes50);
+                                                cambioRestante -= dar50 * 50;
+                                            }
+
+                                            // 20 EUROS
+                                            if (cambioRestante >= 20) {
+                                                int cantidadNecesaria = cambioRestante / 20;
+                                                dar20 = Math.min(cantidadNecesaria, billetes20);
+                                                cambioRestante -= dar20 * 20;
+                                            }
+
+                                            // 10 EUROS
+                                            if (cambioRestante >= 10) {
+                                                int cantidadNecesaria = cambioRestante / 10;
+                                                dar10 = Math.min(cantidadNecesaria, billetes10);
+                                                cambioRestante -= dar10 * 10;
+                                            }
+
+                                            // 5 EUROS
+                                            if (cambioRestante >= 5) {
+                                                int cantidadNecesaria = cambioRestante / 5;
+                                                dar5 = Math.min(cantidadNecesaria, billetes5);
+                                                cambioRestante -= dar5 * 5;
+                                            }
+
+                                            // 2 EUROS
+                                            if (cambioRestante >= 2) {
+                                                int cantidadNecesaria = cambioRestante / 2;
+                                                dar2 = Math.min(cantidadNecesaria, monedas2);
+                                                cambioRestante -= dar2 * 2;
+                                            }
+
+                                            // 1 EURO
+                                            if (cambioRestante >= 1) {
+                                                int cantidadNecesaria = cambioRestante;
+                                                dar1 = Math.min(cantidadNecesaria, monedas1);
+                                                cambioRestante -= dar1;
+                                            }
+
+                                            boolean suficienteCambio = (cambioRestante == 0);
+
+                                            if (suficienteCambio) {
+                                                System.out.printf("Se debe entregar un cambio de %d€.\n", cambioRequerido);
+                                                System.out.println("--- Cambio Entregado ---");
+
+                                                // Actualizar inventario global e imprimir cambio
+                                                if (dar50 > 0) {
+                                                    System.out.printf("- %d x Billetes de 50€\n", dar50);
+                                                    billetes50 -= dar50;
+                                                }
+                                                if (dar20 > 0) {
+                                                    System.out.printf("- %d x Billetes de 20€\n", dar20);
+                                                    billetes20 -= dar20;
+                                                }
+                                                if (dar10 > 0) {
+                                                    System.out.printf("- %d x Billetes de 10€\n", dar10);
+                                                    billetes10 -= dar10;
+                                                }
+                                                if (dar5 > 0) {
+                                                    System.out.printf("- %d x Billetes de 5€\n", dar5);
+                                                    billetes5 -= dar5;
+                                                }
+                                                if (dar2 > 0) {
+                                                    System.out.printf("- %d x Monedas de 2€\n", dar2);
+                                                    monedas2 -= dar2;
+                                                }
+                                                if (dar1 > 0) {
+                                                    System.out.printf("- %d x Monedas de 1€\n", dar1);
+                                                    monedas1 -= dar1;
+                                                }
+
+                                                // Actualizar ingresos y reservas
+                                                ingresosTotales += totalAPagar;
+                                                reservasFinalizadas++;
+                                                pagado = true; // Pago exitoso
+                                            } else {
+                                                System.out.printf("ERROR: No tenemos suficiente cambio exacto (%d€) en caja para devolver.\n", cambioRequerido);
+                                                System.out.printf("Por favor, pague con el importe exacto (%d€) o una cantidad que requiera menos cambio.\n%n", totalAPagar);
+                                                // El bucle de pago continúa
+                                            }
+                                        }
+                                    } // Fin del bucle de pago
+
+
+                                    //Liberar habitación y datos del cliente
+                                    if (pagado) {
+                                        switch (numFacturar) {
+                                            case 1: estadoHabitacion1 = "Libre"; entradaHabitacion1 = null; nombreCliente1 = ""; telefono1 = 0; break;
+                                            case 2: estadoHabitacion2 = "Libre"; entradaHabitacion2 = null; nombreCliente2 = ""; telefono2 = 0; break;
+                                            case 3: estadoHabitacion3 = "Libre"; entradaHabitacion3 = null; nombreCliente3 = ""; telefono3 = 0; break;
+                                            case 4: estadoHabitacion4 = "Libre"; entradaHabitacion4 = null; nombreCliente4 = ""; telefono4 = 0; break;
+                                            case 5: estadoHabitacion5 = "Libre"; entradaHabitacion5 = null; nombreCliente5 = ""; telefono5 = 0; break;
+                                            case 6: estadoHabitacion6 = "Libre"; entradaHabitacion6 = null; nombreCliente6 = ""; telefono6 = 0; break;
+                                            case 7: estadoHabitacion7 = "Libre"; entradaHabitacion7 = null; nombreCliente7 = ""; telefono7 = 0; break;
+                                            case 8: estadoHabitacion8 = "Libre"; entradaHabitacion8 = null; nombreCliente8 = ""; telefono8 = 0; break;
+                                            case 9: estadoHabitacion9 = "Libre"; entradaHabitacion9 = null; nombreCliente9 = ""; telefono9 = 0; break;
+                                            case 10: estadoHabitacion10 = "Libre"; entradaHabitacion10 = null; nombreCliente10 = ""; telefono10 = 0; break;
+                                        }
+                                        System.out.println("\n-----------------------------------------------------");
+                                        System.out.println("¡Transacción finalizada! Habitación " + numFacturar + " liberada.");
+                                        System.out.println("-----------------------------------------------------");
                                     }
 
-                                    System.out.println("Habitación " + numFacturar + " liberada y lista para la siguiente reserva.");
-
-                                } else System.out.println("Número de habitación no válido.");
+                                } else {
+                                    System.out.println("Número de habitación no válido.");
+                                }
                                 break;
                             case 3:
                                 break;
@@ -449,7 +600,7 @@ public class Hotel {
                             switch (op2) {
                                 case "i": // Ingresos totales y reservas finalizadas
                                     System.out.println("\n--- INGRESOS DEL HOTEL ---");
-                                    System.out.println("Ingresos Totales Acumulados: " + ingresosTotales + "€");
+                                    System.out.printf("Ingresos Totales Acumulados: %.2f€\n", ingresosTotales);
                                     System.out.println("Reservas Finalizadas: " + reservasFinalizadas);
                                     break;
                                 case "ii": //Consultar las monedas restantes para el cambio.
@@ -467,6 +618,7 @@ public class Hotel {
                                     break;
                                 case "iii": //Apagar el software
                                     System.out.println("Apagando el sistema...");
+                                    s.close();
                                     System.exit(0); //Apaga el sistema
                                     break;
                                 case "iv": //Volver al menú principal
@@ -489,5 +641,6 @@ public class Hotel {
                     System.out.println("Opción incorrecta");
             }
         } while (!op.equals("e"));
+        s.close();
     }
 }
