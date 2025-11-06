@@ -1,5 +1,5 @@
 # PracticaObligatoriaTema-2
-🏨 PracticaHotelT2: Software de Gestión del Hotel Ciudad de Martos
+🏨 Software de Gestión del Hotel Ciudad de Martos
 Este proyecto es un sistema de consola desarrollado en Java para gestionar las operaciones básicas y administrativas del Hotel Ciudad de Martos.
 
 🚀 1. Requisitos y Ejecución
