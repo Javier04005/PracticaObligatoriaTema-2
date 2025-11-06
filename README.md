@@ -14,6 +14,7 @@ La forma más sencilla de iniciar el programa es mediante el script por lotes:
 
 Manual de Usuario: Menú Principal
 a)Ver estado de ocupación: Muestra el estado actual de todas las habitaciones (Libre / Ocupada).
+
 b	Reservar una habitación: Permite registrar una nueva reserva en una habitación libre, solicitando los datos del huésped.
 c	Realizar el checkout: Finaliza una reserva activa. El sistema calcula y procesa la tarifa final y marca la habitación como libre.
 d	Menú de Administrador: Accede a las herramientas de consulta financiera y mantenimiento (requiere acceso de administrador, si aplica).
