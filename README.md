@@ -48,7 +48,7 @@ java Hotel
 
 El sistema se iniciará mostrando el menú principal.
 
-===================================================================
+=============================================================
 3-✨ Funcionalidades
 
 El sistema ofrece las siguientes características principales a través de un menú interactivo:
