@@ -54,11 +54,11 @@ El sistema se iniciará mostrando el menú principal.
 
 El sistema ofrece las siguientes características principales a través de un menú interactivo:
 
-Consulta de Ocupación: Visualiza rápidamente qué habitaciones están Libres u Ocupadas, incluyendo la fecha de entrada de los huéspedes.
+3.1 Consulta de Ocupación: Visualiza rápidamente qué habitaciones están Libres u Ocupadas, incluyendo la fecha de entrada de los huéspedes.
 
-Reserva: Registra nuevos clientes con nombre y teléfono, y marca una habitación como Ocupada con la fecha actual.
+3.2 Reserva: Registra nuevos clientes con nombre y teléfono, y marca una habitación como Ocupada con la fecha actual.
 
-Checkout y Facturación: Proceso de salida que incluye:
+3.3 Checkout y Facturación: Proceso de salida que incluye:
 
 -Cálculo de la estancia y el costo total (aplicando un 21% de IVA).
 
@@ -74,13 +74,13 @@ Menú de Administrador: Acceso protegido por credenciales para consultar métric
 
 4-🔑 Acceso de Administrador
 
-Para acceder a las funciones de gestión de ingresos y cambio, usa las siguientes credenciales:
+4.1 Para acceder a las funciones de gestión de ingresos y cambio, usa las siguientes credenciales:
 
 -Usuario: admin
 
 -Contraseña:1234 
 
-Estructura y Tarifas del Hotel
+4.2 Estructura y Tarifas del Hotel
 
 El sistema gestiona 10 habitaciones con las siguientes tarifas por noche:
 
