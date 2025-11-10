@@ -2,6 +2,8 @@ REALIZADO POR FRANCISCO JAVIER MARTOS MESA 1ºDAM
 
 Práctica obligatoria Tema 2 
 
+================================================================================================================================================================================
+
 INDICE
 
 1-Sistema de Gestión Hotel Ciudad Martos
@@ -15,6 +17,8 @@ INDICE
 5-Tecnologías Utilizadas
 
 6-Notas de Desarrollo
+
+=====================================================================================================================================================================================
 
 1-🏨 Sistema de Gestión Hotel Ciudad Martos
 
@@ -44,6 +48,8 @@ java Hotel
 
 El sistema se iniciará mostrando el menú principal.
 
+=====================================================================================================================================================================================
+
 3-✨ Funcionalidades
 
 El sistema ofrece las siguientes características principales a través de un menú interactivo:
@@ -61,6 +67,8 @@ Checkout y Facturación: Proceso de salida que incluye:
 -Cálculo del cambio requerido y uso de un inventario predefinido de billetes/monedas.
 
 -Liberación de la habitación.
+
+=====================================================================================================================================================================================
 
 Menú de Administrador: Acceso protegido por credenciales para consultar métricas financieras.
 
@@ -82,11 +90,15 @@ Tipo de Habitaciones
 
 -DOBLES (3-10) 60€
 
+=====================================================================================================================================================================================
+
 5-⚙️ Tecnologías Utilizadas
 
 1-Lenguaje de Programación: Java
 
 2-Librerías Clave: java.time.LocalDate y java.time.temporal.ChronoUnit (para manejo de fechas y cálculo de días).
+
+=====================================================================================================================================================================================
 
 6-💡 Notas de Desarrollo
 
