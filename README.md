@@ -18,7 +18,7 @@ INDICE
 
 6-Notas de Desarrollo
 
-===========================================================================================
+===================================================================
 
 1-🏨 Sistema de Gestión Hotel Ciudad Martos
 
@@ -48,8 +48,7 @@ java Hotel
 
 El sistema se iniciará mostrando el menú principal.
 
-===========================================================================================
-
+===================================================================
 3-✨ Funcionalidades
 
 El sistema ofrece las siguientes características principales a través de un menú interactivo:
@@ -68,7 +67,7 @@ El sistema ofrece las siguientes características principales a través de un me
 
 -Liberación de la habitación.
 
-===========================================================================================
+===================================================================
 
 Menú de Administrador: Acceso protegido por credenciales para consultar métricas financieras.
 
@@ -90,7 +89,7 @@ Tipo de Habitaciones
 
 -DOBLES (3-10) 60€
 
-===========================================================================================
+===================================================================
 
 5-⚙️ Tecnologías Utilizadas
 
@@ -98,7 +97,7 @@ Tipo de Habitaciones
 
 2-Librerías Clave: java.time.LocalDate y java.time.temporal.ChronoUnit (para manejo de fechas y cálculo de días).
 
-===========================================================================================
+===================================================================
 
 6-💡 Notas de Desarrollo
 
