@@ -1,31 +1,39 @@
-# PracticaObligatoriaTema-2
-🏨 Software de Gestión del Hotel Ciudad de Martos
-Este proyecto es un sistema de consola desarrollado en Java para gestionar las operaciones básicas y administrativas del Hotel Ciudad de Martos.
-
-🚀 1. Requisitos y Ejecución
-Para ejecutar la aplicación, su sistema debe tener instalado el entorno de ejecución de Java (JRE).
-
-1.Iniciar la Aplicación (Windows)
-La forma más sencilla de iniciar el programa es mediante el script por lotes:
-
-1.1-Asegúrese de que los archivos PracticaHotelT2.jar y ejecutar.bat se encuentren en el mismo directorio.
-
-1.2-Haga doble clic en el archivo ejecutar.bat .
-
-2.Manual de Usuario: Menú Principal
-
-a)Ver estado de ocupación: Muestra el estado actual de todas las habitaciones (Libre / Ocupada).
-
-b)Reservar una habitación: Permite registrar una nueva reserva en una habitación libre, solicitando los datos del huésped.
-
-c)Realizar el checkout: Finaliza una reserva activa. El sistema calcula y procesa la tarifa final y marca la habitación como libre.
-
-d)Menú de Administrador: Accede a las herramientas de consulta financiera y mantenimiento (requiere acceso de administrador, si aplica).
-
-3.Menú de Administrador
-
-i)Consultar ingresos y reservas: Muestra el Total de Ingresos generados por checkouts y el Número total de reservas finalizadas.
-
-ii)Consultar monedas restantes: Muestra el inventario de monedas o cambio disponible en caja.
-
-iii)Apagar el software: Cierra la aplicación de forma segura.
+🏨 Sistema de Gestión Hotel Ciudad MartosEste proyecto es un sistema de gestión simple para un hotel, implementado en Java. Permite a los usuarios y administradores realizar reservas, verificar la ocupación de las habitaciones y gestionar la facturación (checkout) con control de inventario de cambio.
+🚀 Cómo Empezar
+Prerrequisitos
+Necesitarás tener instalado un entorno de desarrollo de Java (JDK) para compilar y ejecutar el código.
+Java Development Kit (JDK) 8 o superiorEjecución
+Clona el repositorio a tu máquina local:
+git clone [URL_DE_TU_REPOSITORIO]
+cd Hotel
+Compila el archivo Java (si usas la terminal):
+javac Hotel.java
+Ejecuta el programa:
+java Hotel
+El sistema se iniciará mostrando el menú principal.
+✨ Funcionalidades
+El sistema ofrece las siguientes características principales a través de un menú interactivo:
+Consulta de Ocupación: Visualiza rápidamente qué habitaciones están Libres u Ocupadas, incluyendo la fecha de entrada de los huéspedes.
+Reserva: Registra nuevos clientes con nombre y teléfono, y marca una habitación como Ocupada con la fecha actual.
+Checkout y Facturación: Proceso de salida que incluye:
+-Cálculo de la estancia y el costo total (aplicando un 21% de IVA).
+-Gestión de pago en efectivo (redondeo del total a entero).
+-Cálculo del cambio requerido y uso de un inventario predefinido de billetes/monedas.
+-Liberación de la habitación.
+Menú de Administrador: Acceso protegido por credenciales para consultar métricas financieras.
+🔑 Acceso de Administrador
+Para acceder a las funciones de gestión de ingresos y cambio, usa las siguientes credenciales:
+-Usuario: admin
+-Contraseña:1234 
+Estructura y Tarifas del Hotel
+El sistema gestiona 10 habitaciones con las siguientes tarifas por noche:
+Tipo de Habitaciones
+-INDIVIDUAL (1,2) 45€
+-DOBLES (3-10) 60€
+⚙️ Tecnologías Utilizadas
+Lenguaje de Programación: Java
+Librerías Clave: java.time.LocalDate y java.time.temporal.ChronoUnit (para manejo de fechas y cálculo de días).
+💡 Notas de Desarrollo
+1-El código utiliza variables específicas para cada una de las 10 habitaciones y sus respectivos clientes (estadoHabitacion1, nombreCliente1, etc.). 
+2-El cálculo del cambio se realiza de forma greedy, priorizando la entrega de la denominación más alta disponible.
+3-El total a pagar se redondea al euro más cercano para facilitar el cálculo del cambio con el inventario de caja.
