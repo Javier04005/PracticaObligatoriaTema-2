@@ -86,9 +86,9 @@ El sistema gestiona 10 habitaciones con las siguientes tarifas por noche:
 
 Tipo de Habitaciones
 
--INDIVIDUAL (1,2) 45€
+-INDIVIDUAL (1,2 personas) 45€
 
--DOBLES (3-10) 60€
+-DOBLES (3-10 personas) 60€
 
 ===================================================================
 
