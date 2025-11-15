@@ -28,13 +28,13 @@ Este proyecto es un sistema de gestión simple para un hotel, implementado en Ja
 
 Prerrequisitos
 
-Necesitarás tener instalado un entorno de desarrollo de Java (JDK) para compilar y ejecutar el código.
+El archivo .bat se ejecutara en Windows para ello: 
 
-Java Development Kit (JDK) 8 o superiorEjecución
+Necesitarás tener instalado un entorno de desarrollo de Java (JDK) para compilar y ejecutar el código -> Java Development Kit (JDK) 8 o superiorEjecución
 
-Clona el repositorio a tu máquina local:
+Puedes clonar el repositorio a tu máquina local con estos comandos:
 
-git clone [URL_DE_TU_REPOSITORIO]
+git clone [URL_DEL_REPOSITORIO]
 
 cd Hotel
 
@@ -47,6 +47,8 @@ Ejecuta el programa:
 java Hotel
 
 El sistema se iniciará mostrando el menú principal.
+
+O puedes descargarte el archivo zip del proyecto
 
 =============================================================
 
